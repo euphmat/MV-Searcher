@@ -1,0 +1,8 @@
+on alfred_script(q)
+	tell application "Spotify"
+		set i_name to name of current track
+		set i_artist to artist of current track
+		set searchURL to "https://www.youtube.com/results?search_query=" & i_name & " " & i_artist
+	end tell
+	tell application "System Events" to open location searchURL
+end alfred_script
